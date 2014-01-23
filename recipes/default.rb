@@ -20,12 +20,12 @@
 
 package 'distcc'
 
-service 'distcc'
+service 'distcc' do
   action :enable
 end
 
-template "/etc/default/distcc.conf"
-  notifies 'service[:distcc]', :restart
+template "/etc/default/distcc" do
+  notifies :restart, "service[distcc]"
 end
 
 
