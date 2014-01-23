@@ -15,7 +15,7 @@ STARTDISTCC="true"
 #
 # ALLOWEDNETS="127.0.0.1"
 
-ALLOWEDNETS="127.0.0.1 #{node['distcc']['allowed_networks']}"
+ALLOWEDNETS="127.0.0.1 <%= node['distcc']['allowed_networks'] %>"
 
 #
 # Which interface should distccd listen on?
@@ -23,7 +23,7 @@ ALLOWEDNETS="127.0.0.1 #{node['distcc']['allowed_networks']}"
 #
 # LISTENER="127.0.0.1"
 
-LISTENER="#{node['ipaddress']}"
+LISTENER="<%= node['ipaddress'] %>"
 
 #
 # You can specify a (positive) nice level for the distcc process here
